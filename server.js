@@ -7,6 +7,7 @@ const cookieParser = require( 'cookie-parser' )
 const bodyParser = require( 'body-parser' )
 // const passport = require('passport');
 // const FlickrStrategy = require('passport-flickr').Strategy;
+// const
 const pug = require('pug')
 const PORT = process.env.PORT
 
@@ -29,7 +30,7 @@ app.use( require( 'express-session') ({
   resave: false,
   saveUninitialized: false
 }))
-app.ppassport
+
 app.use( express.static( path.join( __dirname, 'public' ) ) )
 
 app.set( 'views', path.join(__dirname, 'views' ) )
@@ -44,11 +45,30 @@ app.get('/', (req, res) => {
       page: 1,
       per_page: 500
     }, (err, result) => {
-      res.json(result)
+      const data = result.photos.photo
+      console.log(data)
+      res.render( 'index', { data : data } )
+      // res.json(data)
     })
-
   })
+})
 
+app.get('/popular', (req, res) => {
+  Flickr.authenticate(flickrOptions, function(error, flickr) {
+    const app = express()
+    flickr.proxy( app, "service/rest" )
+    flickr.interestingness.getList({
+      // user_id: flickr.options.user_id,
+      api_key: flickr.options.api_key,
+      page: 1,
+      per_page: 500
+    }, (err, result) => {
+      const data = result.photos.photo
+      console.log(data)
+      res.render( 'index', { data : data } )
+      // res.json(data)
+    })
+  })
 })
 
 

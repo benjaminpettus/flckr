@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1 your photostream
+  h1 interesting photos
   for photos in data
     img(src="https://farm" + photos.farm + ".staticflickr.com/" + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg")
     p= photos.title 
