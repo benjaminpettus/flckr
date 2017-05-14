@@ -2,6 +2,20 @@ extends layout
 
 block content
   h1 your photostream
-  for photos in data
-    img(src="https://farm" + photos.farm + ".staticflickr.com/" + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg")
-    p= photos.title 
+  .m-p-g
+    for photos in data
+      .m-p-g__thumbs(data-google-image-layout='', data-max-height='350')
+        img.m-p-g__thumbs-img(src="https://farm" + photos.farm + ".staticflickr.com/" 
+        + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg", data, +
+        data-full="")
+        img.m-p-g__thumbs-img(src='http://unsplash.it/600/400?image=940', data-full='http://unsplash.it/1200/800?image=940')
+    
+      .m-p-g__fullscreen
+
+
+
+
+
+    //- for photos in data
+    //-   img(src="https://farm" + photos.farm + ".staticflickr.com/" + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg")
+    //-   p= photos.title 

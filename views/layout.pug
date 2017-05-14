@@ -3,12 +3,8 @@ html
   head
     meta(charset='utf-8')
     link(href='/sylesheets/styles.css', rel='stylesheet')
+    link(rel='stylesheet', href='material-photo-gallery.css')
     title
-    //- block scripts
-    //-   script
-    //-     var elem = document.querySelector('.m-p-g');
-    //-     document.addEventListener('DOMContentLoaded', function() {
-    //-       var gallery = new MaterialPhotoGallery(elem);
-    //-       });
   body
     block content
+    script(src='material-photo-gallery.min.js')
