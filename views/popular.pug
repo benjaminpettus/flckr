@@ -2,6 +2,13 @@ extends layout
 
 block content
   h1 interesting photos
-  for photos in data
-    img(src="https://farm" + photos.farm + ".staticflickr.com/" + photos.server + "/" + photos.id + "_" + photos.secret + ".jpg")
-    p= photos.title 
+  .m-p-g
+    .m-p-g__thumbs(data-google-image-layout='', data-max-height='350')
+      each photo in data
+        
+        img.m-p-g__thumbs-img(src="https://farm" + photo.farm + ".staticflickr.com/" 
+        + photo.server + "/" + photo.id + "_" + photo.secret + "_b" + ".jpg", + 
+        data-full="https://farm" + photo.farm + ".staticflickr.com/" + 
+        photo.server + "/" + photo.id + "_" + photo.secret + "_b" + ".jpg")
+          
+        .m-p-g__fullscreen 

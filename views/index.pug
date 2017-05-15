@@ -6,11 +6,14 @@ block content
   .m-p-g
     .m-p-g__thumbs(data-google-image-layout='', data-max-height='350')
       each photo in data
+        
         img.m-p-g__thumbs-img(src="https://farm" + photo.farm + ".staticflickr.com/" 
         + photo.server + "/" + photo.id + "_" + photo.secret + "_b" + ".jpg", + 
         data-full="https://farm" + photo.farm + ".staticflickr.com/" + 
         photo.server + "/" + photo.id + "_" + photo.secret + "_b" + ".jpg")
-        
+          
         .m-p-g__fullscreen
-      
+          
+          
+          
           
