@@ -5,9 +5,6 @@ const logger = require( 'morgan' )
 const path = require( 'path' )
 const cookieParser = require( 'cookie-parser' )
 const bodyParser = require( 'body-parser' )
-// const passport = require('passport');
-// const FlickrStrategy = require('passport-flickr').Strategy;
-// const
 const pug = require('pug')
 const PORT = process.env.PORT
 

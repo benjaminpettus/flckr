@@ -2,9 +2,14 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    link(href='/sylesheets/styles.css', rel='stylesheet')
-    link(rel='stylesheet', href='material-photo-gallery.css')
+    link(href='../stylesheets/material-photo-gallery.css', rel='stylesheet')
+    link(href='../stylesheets/styles.css', rel='stylesheet')
     title
   body
     block content
-    script(src='material-photo-gallery.min.js')
+    script(src='../javascripts/mpg.js')
+    script.
+      var elem = document.querySelector('.m-p-g');
+      document.addEventListener('DOMContentLoaded', function() {
+        var gallery = new MaterialPhotoGallery(elem);
+      });
